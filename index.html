@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>家庭菜園サポート | 公式サポートページ</title>
+  <title>そだて日和 | かんたん水やり・植物管理・無料AI診断アプリ</title>
+  <meta name="description" content="登録不要・完全無料！ベランダのプランター野菜も室内の観葉植物・多肉植物も、季節に合わせた水やり目安と天気アドバイスで枯らさず管理。初心者向けかんたんモードと無料AI病害虫診断付き。">
+  <meta name="keywords" content="そだて日和,植物管理,水やり,観葉植物,ベランダ菜園,プランター,家庭菜園,AI診断,育て方">
   <style>
     :root {
-      --primary: #15803d;
-      --primary-light: #dcfce7;
-      --text-main: #1f2937;
-      --text-muted: #4b5563;
-      --bg-page: #f9fafb;
+      --primary: #456d54;
+      --primary-dark: #2c4a38;
+      --primary-light: #e8f3ec;
+      --accent: #e07a5f;
+      --text-main: #2c3531;
+      --text-muted: #52635b;
+      --bg-page: #fbf9f5;
       --bg-card: #ffffff;
-      --border: #e5e7eb;
+      --border: #e2e8e4;
     }
     * {
       box-sizing: border-box;
@@ -27,51 +31,60 @@
       padding: 24px 16px;
     }
     .container {
-      max-width: 800px;
+      max-width: 840px;
       margin: 0 auto;
       background: var(--bg-card);
-      border-radius: 16px;
+      border-radius: 20px;
       border: 1px solid var(--border);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 24px rgba(44, 53, 49, 0.06);
       padding: 32px 24px;
     }
     @media (min-width: 640px) {
       .container {
-        padding: 48px 40px;
+        padding: 48px 44px;
       }
     }
     header {
       border-bottom: 2px solid var(--primary-light);
-      padding-bottom: 20px;
+      padding-bottom: 24px;
       margin-bottom: 28px;
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
     }
     .badge {
       display: inline-block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-dark);
       background: var(--primary-light);
       padding: 4px 12px;
       border-radius: 9999px;
-      margin-bottom: 12px;
+    }
+    .badge-accent {
+      color: #9c3d25;
+      background: #fdece7;
     }
     h1 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: #111827;
-      letter-spacing: -0.025em;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1c2621;
+      letter-spacing: -0.02em;
       margin-bottom: 8px;
     }
     .subtitle {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: var(--text-muted);
     }
     h2 {
       font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-top: 28px;
-      margin-bottom: 12px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-top: 32px;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -80,7 +93,7 @@
       content: "";
       display: inline-block;
       width: 4px;
-      height: 1.1em;
+      height: 1.15em;
       background-color: var(--primary);
       border-radius: 2px;
     }
@@ -88,6 +101,28 @@
       margin-bottom: 14px;
       font-size: 0.975rem;
       color: var(--text-muted);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .feature-card {
+      background: #f8fbf9;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
     }
     ul {
       margin-left: 20px;
@@ -106,15 +141,15 @@
     }
     .btn {
       display: inline-block;
-      padding: 10px 18px;
-      border-radius: 8px;
-      font-size: 0.925rem;
-      font-weight: 600;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
       text-decoration: none;
       transition: opacity 0.15s ease;
     }
     .btn:hover {
-      opacity: 0.85;
+      opacity: 0.88;
     }
     .btn-primary {
       background-color: var(--primary);
@@ -122,7 +157,7 @@
     }
     .btn-secondary {
       background-color: var(--primary-light);
-      color: var(--primary);
+      color: var(--primary-dark);
     }
     footer {
       margin-top: 40px;
@@ -137,26 +172,51 @@
 <body>
   <div class="container">
     <header>
-      <span class="badge">アプリ公式サイト</span>
-      <h1>家庭菜園サポート</h1>
-      <p class="subtitle">プランター・家庭菜園のお世話スケジュール管理、栽培記録、AI病害虫診断アプリ</p>
+      <div class="badge-row">
+        <span class="badge">そだて日和 公式サポートページ</span>
+        <span class="badge badge-accent">登録不要・ずっと無料</span>
+      </div>
+      <h1>そだて日和</h1>
+      <p class="subtitle">かんたん水やり・植物管理・無料AI病害虫診断アプリ（ベランダ野菜・観葉植物・多肉植物対応）</p>
     </header>
 
     <main>
       <section>
+        <h2>選ばれる理由</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>アカウント登録不要・完全無料</h3>
+            <p>高額な月額課金や面倒な登録は一切なし。アプリを入れてすぐ、ベランダや室内の植物管理を始められます。</p>
+          </div>
+          <div class="feature-card">
+            <h3>季節に合わせた水やり目安</h3>
+            <p>夏は乾きやすく、冬は控えめに。日本の季節に合わせて水やりペースを自動調整し、根腐れや水切れを防ぎます。</p>
+          </div>
+          <div class="feature-card">
+            <h3>初心者向けかんたんモード</h3>
+            <p>大きな文字と今日やることだけのシンプル画面を切り替え可能。野菜からポトス・モンステラ・多肉植物まで46種を標準収録。</p>
+          </div>
+          <div class="feature-card">
+            <h3>無料のAI写真・病害虫診断</h3>
+            <p>葉っぱの異変や種類がわからない植物も写真を撮るだけ。原因のチェックと具体的なケア対策を提案します。</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h2>主な機能</h2>
         <ul>
-          <li>現在地の天気予報と連動した水やり・お世話目安の管理</li>
-          <li>カレンダーによるお世話履歴・収穫数の記録</li>
-          <li>写真を用いたAI病害虫・育成状態の診断</li>
-          <li>端末内ローカルストレージでの安全なデータ管理</li>
+          <li>現在地の天気予報と連動したお世話アドバイス（荒天・低温・高温乾燥のお知らせ）</li>
+          <li>野菜・ハーブ・草花・観葉植物・多肉植物（全46種）のワンタップ登録＆育成ガイド</li>
+          <li>カレンダーによる水やり・追肥・剪定・収穫数のスケジュール管理と記録</li>
+          <li>端末内ローカルストレージ（SQLite）での安全なデータ保存＆JSONバックアップ</li>
         </ul>
       </section>
 
       <section>
         <h2>関連リンク</h2>
         <div class="links">
-          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=jp.homegarden.support" target="_blank" rel="noopener noreferrer">Google Play ストア</a>
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=jp.homegarden.support" target="_blank" rel="noopener noreferrer">Google Play ストアでダウンロード</a>
           <a class="btn btn-secondary" href="https://yu-os.github.io/home-garden-privacy/" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
         </div>
       </section>
@@ -168,7 +228,7 @@
     </main>
 
     <footer>
-      <p>&copy; 2026 家庭菜園サポート All Rights Reserved.</p>
+      <p>&copy; 2026 そだて日和 All Rights Reserved.</p>
     </footer>
   </div>
 </body>
